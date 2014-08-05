@@ -42,12 +42,13 @@ $ ansible-playbook -i hosts localhost.yml
 
 - Tested on Ansible 1.6.6.
 - Tested for the following OS:
- - CentOS 5.6
- - CentOS 6.5
- - CentOS 7.0
+ - Debian 7.0 (wheezy)
  - Ubuntu 10.04
  - Ubuntu 12.04.4
  - Ubuntu 14.04
+ - CentOS 5.6
+ - CentOS 6.5
+ - CentOS 7.0
  - Fedora 19
  - Fedora 20
  - OpenSUSE 13.1
