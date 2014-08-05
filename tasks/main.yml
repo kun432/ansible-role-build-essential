@@ -1,9 +1,9 @@
 # file: build-essential/tasks/main.yml
 
-- name: build-essential | Read the family variables
+- name: read the distribution variables
   include_vars: "{{ansible_distribution}}.yml"
 
-- name: build-essential | Make sure the packages are installed (Debian/Ubuntu)
+- name: Make sure the packages are installed (Debian/Ubuntu)
   apt:
     pkg: "{{item}}"
     state: present
@@ -11,28 +11,28 @@
   with_items: buildessential_packages
   when: ansible_distribution in [ "Debian", "Ubuntu" ]
 
-- name: build-essential | Make sure the packages are installed (Fedora/RedHat/CentOS)
+- name: Make sure the packages are installed (Fedora/RedHat/CentOS)
   yum:
     name: "{{item}}"
     state: present
   with_items: buildessential_packages
   when: ansible_distribution in [ "Fedora", "RedHat", "CentOS" ]
 
-- name: build-essential | Make sure the optional packages are installed (RedHat)
+- name: Make sure the optional packages are installed (RedHat/CentOS, <6.0)
   yum:
     name: "{{item}}"
     state: present
   with_items: buildessential_optional_packages
   when: ansible_distribution in [ "RedHat", "CentOS" ] and {{ ansible_distribution_version | version_compare('6.0', '<') }}
 
-- name: build-essential | Make sure the packages are installed (Suse)
+- name: Make sure the packages are installed (Suse)
   zypper:
     name: "{{item}}"
     state: present
   with_items: buildessential_packages
   when: ansible_distribution == "Suse"
 
-- name: build-essential | Make sure the packages are installed (FreeBSD)
+- name: Make sure the packages are installed (FreeBSD)
   pkgng:
     name: "{{item}}"
     state: present
