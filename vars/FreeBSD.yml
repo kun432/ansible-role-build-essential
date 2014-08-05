@@ -1,0 +1,6 @@
+# file: build-essential/vars/FreeBSD.yml
+
+buildessential_packages:
+  - gmake
+  - autoconf
+  - m4

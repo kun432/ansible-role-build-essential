@@ -30,4 +30,11 @@
     name: "{{item}}"
     state: present
   with_items: buildessential_packages
-  when: ansible_os_family == "Suse"
+  when: ansible_distribution == "Suse"
+
+- name: build-essential | Make sure the packages are installed (FreeBSD)
+  pkgng:
+    name: "{{item}}"
+    state: present
+  with_items: buildessential_packages
+  when: ansible_distribution == "FreeBSD"
