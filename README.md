@@ -52,7 +52,6 @@ $ ansible-playbook -i hosts localhost.yml
  - Fedora 19
  - Fedora 20
  - OpenSUSE 13.1
- - FreeBSD 9.2
  - FreeBSD 10
 
 ## Variables
