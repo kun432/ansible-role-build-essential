@@ -1,22 +1,29 @@
 # file: build-essential/tasks/main.yml
 
 - name: build-essential | Read the family variables
-  include_vars: "{{ansible_os_family}}.yml"
+  include_vars: "{{ansible_distribution}}.yml"
 
-- name: build-essential | Make sure the packages are installed (Debian)
+- name: build-essential | Make sure the packages are installed (Debian/Ubuntu)
   apt:
     pkg: "{{item}}"
     state: present
     update_cache: yes
   with_items: buildessential_packages
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution in [ "Debian", "Ubuntu" ]
 
-- name: build-essential | Make sure the packages are installed (Fedora/RedHat)
+- name: build-essential | Make sure the packages are installed (Fedora/RedHat/CentOS)
   yum:
     name: "{{item}}"
     state: present
   with_items: buildessential_packages
-  when: ansible_os_family == "Fedora" or ansible_os_family == "RedHat"
+  when: ansible_distribution in [ "Fedora", "RedHat", "CentOS" ]
+
+- name: build-essential | Make sure the optional packages are installed (RedHat)
+  yum:
+    name: "{{item}}"
+    state: present
+  with_items: buildessential_optional_packages
+  when: ansible_distribution in [ "RedHat", "CentOS" ] and {{ ansible_distribution_version | version_compare('6.0', '<') }}
 
 - name: build-essential | Make sure the packages are installed (Suse)
   zypper:

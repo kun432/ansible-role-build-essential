@@ -1,0 +1,17 @@
+# file: build-essential/vars/CentOS.yml
+
+buildessential_packages:
+ - autoconf
+ - bison
+ - flex
+ - gcc
+ - gcc-c++
+ - kernel-devel
+ - make
+ - m4
+ - patch
+
+# Ensure GCC 4 is available on older pre-6 EL
+buildessential_optional_packages:
+ - gcc44
+ - gcc44-c++

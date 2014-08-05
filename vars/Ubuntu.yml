@@ -1,0 +1,10 @@
+# file: build-essential/vars/Ubuntu.yml
+
+buildessential_packages:
+  - autoconf
+  - binutils-doc
+  - bison
+  - build-essential
+  - flex
+  - gettext
+  - libncurses5-dev
