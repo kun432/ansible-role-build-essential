@@ -1,4 +1,4 @@
-Ansibles - build-essential
+ansible-role-build-essential
 ========
 
 Ansible role which installs packages required for compiling C software from source.
