@@ -46,7 +46,7 @@ $ ansible-playbook -i hosts localhost.yml
  - Ubuntu 10.04
  - Ubuntu 12.04.4
  - Ubuntu 14.04
- - CentOS 5.6
+ - CentOS 5.8
  - CentOS 6.5
  - CentOS 7.0
  - Fedora 19
