@@ -1,22 +1,68 @@
-## Ansibles - build-essential [![Build Status](https://travis-ci.org/Ansibles/build-essential.png)](https://travis-ci.org/Ansibles/build-essential)
+Ansibles - build-essential
+========
 
 Ansible role which installs packages required for compiling C software from source.
 
+This is a fork of [Ansibles/build-essential](https://github.com/Ansibles/build-essential). The upstream seems not updated very often, so I forked.
 
-#### Requirements & Dependencies
-- Tested on Ansible 1.4 or higher.
+## Usage
 
+Install from ansible-galaxy
 
-#### Variables
+```shell
+$ ansible-galaxy install -p . kun432/build-essential
+```
+or from github.
 
-none
+```shell
+$ git clone https://github.com/kun432/ansible-role-build-essential.git
+```
 
+Create a playbook(ex.`localhost.yml`) and a inventory(ex.`hosts`) in same directory you install role.
 
-#### License
+###### hosts
+```
+localhost
+```
+ 
+###### localhost.yml
+```yml
+- hosts: localhost
+  connection: local
+  sudo: yes
+  roles:
+    - kun432.build-essential
+```
+Run.
+```shell
+$ ansible-playbook -i hosts localhost.yml
+```
 
-Licensed under the MIT License. See the LICENSE file for details.
+## Requirements & Dependencies
 
+- Tested on Ansible 1.6.6.
+- Tested for the following OS:
+ - CentOS 5.6
+ - CentOS 6.5
+ - CentOS 7.0
+ - Ubuntu 10.04
+ - Ubuntu 12.04.4
+ - Ubuntu 14.04
+ - Fedora 19
+ - Fedora 20
+ - OpenSUSE 13.1
+ - FreeBSD 9.2
+ - FreeBSD 10
 
-#### Feedback, bug-reports, requests, ...
+## Variables
 
-Are [welcome](https://github.com/ansibles/build-essential/issues)!
+None,
+
+## License
+
+Licensed under the MIT License.
+
+## Contribute
+
+Feedback, bug-reports and requests are always [welcome](https://github.com/kun432/ansible-role-build-essential/issues)!
+
