@@ -10,12 +10,12 @@ This is a fork of [Ansibles/build-essential](https://github.com/Ansibles/build-e
 Install from ansible-galaxy
 
 ```shell
-$ ansible-galaxy install -p . kun432/build-essential
+$ ansible-galaxy install -p . kun432,build-essential
 ```
 or from github.
 
 ```shell
-$ git clone https://github.com/kun432/ansible-role-build-essential.git
+$ git clone https://github.com/kun432/ansible-role-build-essential.git kun432.build-essential
 ```
 
 Create a playbook(ex.`localhost.yml`) and a inventory(ex.`hosts`) in same directory you install role.
