@@ -10,7 +10,7 @@ This is a fork of [Ansibles/build-essential](https://github.com/Ansibles/build-e
 Install from ansible-galaxy
 
 ```shell
-$ ansible-galaxy install -p . kun432,build-essential
+$ ansible-galaxy install -p . kun432.build-essential
 ```
 or from github.
 
