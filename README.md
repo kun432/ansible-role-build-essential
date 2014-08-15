@@ -1,4 +1,4 @@
-ansible-role-build-essential
+ansible-role-build-essential[![Build Status](https://travis-ci.org/kun432/ansible-role-build-essential.svg?branch=master)](https://travis-ci.org/kun432/ansible-role-build-essential)
 ========
 
 Ansible role which installs packages required for compiling C software from source.
